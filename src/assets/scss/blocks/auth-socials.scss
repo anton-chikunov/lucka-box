@@ -1,0 +1,63 @@
+.auth-socials {
+  margin: 22px 45px 0px;
+
+  @media (min-width: 768px) {
+    margin: 22px 30px 0px;
+  }  
+
+  &__or {
+    position: relative;
+    height: 16px; 
+    font-size: 14px;   
+    line-height: 16px;
+    color: $grey2;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left:0px;
+      right: 0px;
+      top: 40%;
+      height: 2px;
+      background: $grey5;
+    }
+
+    span {
+      background: $white;
+      padding: 0px 15px;
+      z-index: 2;
+    }
+  }
+  
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }      
+  }
+
+  &__btn {
+    height: 48px;
+    line-height: 46px;
+    border: 1px solid $grey5;
+    border-radius: 10px;
+    background: $white;
+    margin-bottom: 16px;
+    width: 100%;
+
+    &:last-child {
+      margin: 0px;
+    }
+
+    @media (min-width: 768px) {
+      margin: 0px 17px 0px 0px;
+    }     
+  }
+
+}

@@ -1,0 +1,17 @@
+.btn {
+  color: $grey4;
+  padding: 0px 10px;
+  height: 48px;
+  line-height: 46px;
+
+  &:hover, 
+  &:focus, 
+  &:active {
+    color: $grey4;
+  }
+
+  &--full-width {
+    display: block;
+    width: 100%;
+  }
+}

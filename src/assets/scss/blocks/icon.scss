@@ -8,4 +8,37 @@
     width: 247px;
     height: 70px;
   }
+
+  &--input {
+    width: 20px;
+    height: 20px;
+  }
+
+  &--eye {
+    width: 16px;
+    height: 14px;    
+  }
+
+  &--eye-off {
+    width: 16px;
+    height: 16px;        
+  }
+
+  &--google {
+    width: 16px;
+    height: 16px;
+    margin-top: -3px;
+  }
+
+  &--facebook {
+    width: 16px;
+    height: 16px;    
+    margin-top: -3px;
+  }
+
+  &--twitter {
+    width: 16px;
+    height: 14px;    
+    margin-top: -3px;
+  }  
 }

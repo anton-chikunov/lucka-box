@@ -26,4 +26,48 @@
     margin: 0px 20px;
     font-family: $font-family-secondary;
   }
+
+  &__form {
+    margin: 30px 45px 0px;
+    @media (min-width: 768px) {
+      margin: 30px 30px 0px;
+    }     
+  }
+
+  &__buttons {
+    padding-top: 10px;
+  }
+
+  &__socials {
+    margin: 22px 45px 0px;
+    @media (min-width: 768px) {
+      margin: 22px 30px 0px;
+    }
+  }
+
+  &__socials-or {
+    position: relative;
+    height: 16px; 
+    font-size: 14px;   
+    line-height: 16px;
+    color: $grey2;
+    display: flex;
+    justify-content: center;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left:0px;
+      right: 0px;
+      top: 40%;
+      height: 2px;
+      background: $grey5;
+    }
+
+    span {
+      background: $white;
+      padding: 0px 15px;
+      z-index: 2;
+    }
+  }  
 }
