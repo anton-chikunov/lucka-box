@@ -50,6 +50,11 @@
     background: $white;
     margin-bottom: 16px;
     width: 100%;
+    outline: none;
+    
+    &:focus {
+      outline: none;
+    }
 
     &:last-child {
       margin: 0px;

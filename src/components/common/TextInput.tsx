@@ -17,7 +17,7 @@ function TextInput({ type, icon ,label, value, error }: Props) {
 
   const [currentType ,setType] = useState(type);
   const [toggleIcon ,setToggleIcon] = useState('eye');
-  const [defaultValue ,setValue] = useState(value);
+  const [currentValue ,setValue] = useState(value ? value : '');
   const [focused ,setFocus] = useState(false);
   const [filled ,setFilled] = useState(false);
   const [currentError ,setError] = useState(error);
@@ -31,7 +31,7 @@ function TextInput({ type, icon ,label, value, error }: Props) {
   }
   
   const handleChange = () => {
-    setValue(refInput.current?.value);
+    setValue(refInput.current?.value ? refInput.current?.value : '');
     setError(null);
     if (refInput.current?.value) {
       setFilled(true);
@@ -63,7 +63,7 @@ function TextInput({ type, icon ,label, value, error }: Props) {
         className="input__control" 
         placeholder={label} 
         ref={refInput}
-        value={defaultValue} 
+        value={currentValue} 
         onFocus={handleFocus} 
         onBlur={handleBlur}
         onChange={handleChange}
