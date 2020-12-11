@@ -1,0 +1,12 @@
+.page {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;  
+  background: $white;
+
+  &--auth {
+    background: $auth-background;
+    justify-content: center;
+  }
+}

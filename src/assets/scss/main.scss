@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto&display=swap');
+@import "./variables.scss";
+
+// Bootstrap modules
+@import "../../../node_modules/bootstrap/scss/_functions";
+@import "../../../node_modules/bootstrap/scss/_variables";
+@import "../../../node_modules/bootstrap/scss/_mixins";
+@import "../../../node_modules/bootstrap/scss/_utilities";
+@import "../../../node_modules/bootstrap/scss/_root";
+@import "../../../node_modules/bootstrap/scss/_reboot";
+@import "../../../node_modules/bootstrap/scss/_containers";
+@import "../../../node_modules/bootstrap/scss/_type";
+@import "../../../node_modules/bootstrap/scss/_grid";
+@import "../../../node_modules/bootstrap/scss/_buttons";
+
+// App styles
+@import "./colors.scss";
+@import "./common.scss";
+@import "./blocks/icon.scss";
+@import "./blocks/page.scss";
+@import "./blocks/logo.scss";
+@import "./blocks/auth.scss";
+@import "./blocks/auth-block.scss";
