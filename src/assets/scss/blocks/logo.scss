@@ -1,0 +1,12 @@
+.logo {
+  color: $blue2;
+  text-align: center;
+
+  &--auth {
+    color: $white;
+    margin-bottom: 20px;
+    @media (min-width: 768px) {
+      margin-bottom: 29px;
+    }     
+  }
+}

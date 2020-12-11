@@ -1,0 +1,29 @@
+.auth-block {
+  background: $white;
+  border-radius: 20px;
+  padding: 30px 0px;
+
+  @media (min-width: 768px) {
+    padding: 40px 0px 30px;
+  }   
+  
+  &__subtitle {
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1px;
+    color: $grey1;
+    margin: 0px 20px 20px;
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 600;
+    text-align: center;
+    color: $blue2;
+    margin: 0px 20px;
+    font-family: $font-family-secondary;
+  }
+}
