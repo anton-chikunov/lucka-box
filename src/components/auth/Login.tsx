@@ -3,8 +3,7 @@ import TextInput from '../common/TextInput';
 import Button from '../common/Button';
 import sprite from '../../assets/img/icons.svg';
 
-function Login() {
-
+function Login(): JSX.Element {
   return (
     <div className="auth-block">
       <div className="auth-block__subtitle">JUST LOGIN FIRST</div>
@@ -14,7 +13,7 @@ function Login() {
         <TextInput type="password" icon="password" label="Password" />
         <TextInput type="password" icon="password" label="Repeat Password" />
         <div className="auth-block__buttons">
-          <Button fullWidth={true} title="Login" />
+          <Button fullWidth title="Login" />
         </div>
       </div>
 
@@ -25,19 +24,19 @@ function Login() {
         <div className="auth-socials__buttons">
           <button type="button" className="auth-socials__btn">
             <svg className="icon icon--google" fill="currentColor">
-              <use href={sprite + "#google"} />
-            </svg>            
+              <use href={`${sprite}#google`} />
+            </svg>
           </button>
           <button type="button" className="auth-socials__btn">
             <svg className="icon icon--facebook" fill="currentColor">
-              <use href={sprite + "#facebook"} />
-            </svg>            
+              <use href={`${sprite}#facebook`} />
+            </svg>
           </button>
           <button type="button" className="auth-socials__btn">
             <svg className="icon icon--twitter" fill="currentColor">
-              <use href={sprite + "#twitter"} />
-            </svg>            
-          </button>          
+              <use href={`${sprite}#twitter`} />
+            </svg>
+          </button>
         </div>
       </div>
     </div>

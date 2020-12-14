@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './assets/scss/main.scss';
 
 import AuthContainer from './components/auth/AuthContainer';
 import Login from './components/auth/Login';
 import SignUp from './components/auth/SignUp';
 
-function App() {
-  const [isSignedIn , setSignedIn] = useState(false);
+function App(): JSX.Element {
+  const [isSignedIn, setSignedIn] = useState(false);
+  const containerClasses = ['page'];
+  if (!isSignedIn) {
+    containerClasses.push('page--auth');
+  }
 
   return (
     <Router>
-      <div className={"page " + (!isSignedIn ? 'page--auth' : '')} >
+      <div className={containerClasses.join(' ')}>
         <Switch>
           <Route exact path="/">
             <AuthContainer>
@@ -26,7 +26,7 @@ function App() {
             <AuthContainer>
               <SignUp />
             </AuthContainer>
-          </Route>          
+          </Route>
         </Switch>
       </div>
     </Router>

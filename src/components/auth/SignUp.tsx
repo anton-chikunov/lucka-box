@@ -1,6 +1,6 @@
 import React from 'react';
 
-function SignUp() {
+function SignUp(): JSX.Element {
   return (
     <div className="auth-block">
       <div className="auth-block__subtitle">GET STARTED</div>

@@ -1,35 +1,49 @@
 import React, { useRef, useState } from 'react';
 import sprite from '../../assets/img/icons.svg';
 
-type InputType = "text" | "password" | "email" | "number" | "search" | "tel";
+type InputType = 'text' | 'password' | 'email' | 'number' | 'search' | 'tel';
 
 type Props = {
-  type: InputType,
-  icon: string,
-  label: string,
-  value?: string,
-  error?: string | null
+  type: InputType;
+  icon: string;
+  label: string;
+  value?: string;
+  error?: string | null;
 };
 
-function TextInput({ type, icon ,label, value, error }: Props) {
+function TextInput({ type, icon, label, value, error }: Props): JSX.Element {
   const isPassword = type === 'password';
   const refInput = useRef<HTMLInputElement>(null);
 
-  const [currentType ,setType] = useState(type);
-  const [toggleIcon ,setToggleIcon] = useState('eye');
-  const [currentValue ,setValue] = useState(value ? value : '');
-  const [focused ,setFocus] = useState(false);
-  const [filled ,setFilled] = useState(false);
-  const [currentError ,setError] = useState(error);
+  const [currentType, setType] = useState(type);
+  const [toggleIcon, setToggleIcon] = useState('eye');
+  const [currentValue, setValue] = useState(value || '');
+  const [focused, setFocus] = useState(false);
+  const [filled, setFilled] = useState(false);
+  const [currentError, setError] = useState(error);
+
+  const containerClasses = ['input'];
+  if (isPassword) {
+    containerClasses.push('input--password');
+  }
+  if (focused) {
+    containerClasses.push('input--focused');
+  }
+  if (filled) {
+    containerClasses.push('input--filled');
+  }
+  if (currentError) {
+    containerClasses.push('input--error');
+  }
 
   const handleFocus = () => {
     setFocus(true);
-  }
+  };
 
   const handleBlur = () => {
     setFocus(false);
-  }
-  
+  };
+
   const handleChange = () => {
     setValue(refInput.current?.value ? refInput.current?.value : '');
     setError(null);
@@ -38,8 +52,8 @@ function TextInput({ type, icon ,label, value, error }: Props) {
     } else {
       setFilled(false);
     }
-  }
-  
+  };
+
   const togglePassword = () => {
     if (currentType === 'password') {
       setType('text');
@@ -48,36 +62,45 @@ function TextInput({ type, icon ,label, value, error }: Props) {
       setType('password');
       setToggleIcon('eye');
     }
-  }  
+  };
 
   return (
-    <div className={`input ${isPassword ? "input--password" : ""} ${focused ? "input--focused" : ""} ${filled ? "input--filled" : ""}  ${currentError ? "input--error" : ""}`}>
+    <div className={containerClasses.join(' ')}>
       <div className="input__icon input__icon--left">
         <svg className="icon icon--input" fill="currentColor">
-          <use href={sprite + "#" + icon} />
+          <use href={`${sprite}#${icon}`} />
         </svg>
       </div>
 
-      <input 
-        type={currentType} 
-        className="input__control" 
-        placeholder={label} 
+      <input
+        type={currentType}
+        className="input__control"
+        placeholder={label}
         ref={refInput}
-        value={currentValue} 
-        onFocus={handleFocus} 
+        value={currentValue}
+        onFocus={handleFocus}
         onBlur={handleBlur}
         onChange={handleChange}
       />
-      <div className="input__line"></div>
-      {isPassword ? 
-        <button type="button" className={`input__btn ${currentType === 'text' ? "input__btn--off" : ""}`} onClick={togglePassword}>
+      <div className="input__line" />
+      {isPassword ? (
+        <button
+          type="button"
+          className={`input__btn ${currentType === 'text' ? 'input__btn--off' : ''}`}
+          onClick={togglePassword}
+        >
           <svg className={`icon icon--${toggleIcon}`} fill="currentColor">
-            <use href={sprite + "#" + toggleIcon} />
+            <use href={`${sprite}#${toggleIcon}`} />
           </svg>
         </button>
-      : null}
+      ) : null}
     </div>
   );
 }
+
+TextInput.defaultProps = {
+  value: '',
+  error: null,
+};
 
 export default TextInput;
